@@ -5,23 +5,21 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: "wlygon7",
+      options: {
+        repo: "wlygon7/lygonms.com",
+        repoId: "R_kgDORI_0lg",
+        category: "Announcements",
+        categoryId: "DIC_kwDORI_0ls4C17-c",
+      },
+    }),
+  ],
   footer: Component.Footer({
-    <script src="https://giscus.app/client.js"
-        data-repo="wlygon7/lygonms.com"
-        data-repo-id="R_kgDORI_0lg"
-        data-category="[ENTER CATEGORY NAME HERE]"
-        data-category-id="[ENTER CATEGORY ID HERE]"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
+    links: {
+      GitHub: "https://github.com/gassandrid",
+    },
   }),
 }
 
