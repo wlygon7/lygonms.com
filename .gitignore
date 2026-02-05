@@ -9,3 +9,7 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+
+# Obsidian plugin data
+content/.smart-env/
+content/templates/
