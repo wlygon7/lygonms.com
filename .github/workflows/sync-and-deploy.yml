@@ -15,7 +15,7 @@ jobs:
       - name: Checkout vault content
         uses: actions/checkout@v4
         with:
-          repository: wlygon7/JWL-VAULT
+          repository: wlygon7/ObsidianVault
           token: ${{ secrets.VAULT_PAT }}
           path: vault-temp
       
