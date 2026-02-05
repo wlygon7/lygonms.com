@@ -1,0 +1,56 @@
+name: Sync Vault and Deploy
+
+on:
+  repository_dispatch:
+    types: [vault-updated]
+  workflow_dispatch:
+
+jobs:
+  sync-build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Quartz repo
+        uses: actions/checkout@v4
+      
+      - name: Checkout vault content
+        uses: actions/checkout@v4
+        with:
+          repository: wlygon7/JWL-VAULT
+          token: ${{ secrets.VAULT_PAT }}
+          path: vault-temp
+      
+      - name: Sync published content
+        run: |
+          rm -rf content/*
+          
+          # Copy only files with publish: true
+          find vault-temp -name "*.md" -type f | while read file; do
+            if grep -q "publish: true" "$file"; then
+              rel_path="${file#vault-temp/}"
+              mkdir -p "content/$(dirname "$rel_path")"
+              cp "$file" "content/$rel_path"
+            fi
+          done
+          
+          # Copy assets
+          if [ -d "vault-temp/assets" ]; then
+            cp -r vault-temp/assets content/ || true
+          fi
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install and Build
+        run: |
+          npm ci
+          npx quartz build
+      
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: lygonms-com
+          directory: public
