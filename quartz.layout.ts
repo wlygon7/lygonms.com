@@ -7,10 +7,21 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   afterBody: [],
   footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
-    },
+    <script src="https://giscus.app/client.js"
+        data-repo="wlygon7/lygonms.com"
+        data-repo-id="R_kgDORI_0lg"
+        data-category="[ENTER CATEGORY NAME HERE]"
+        data-category-id="[ENTER CATEGORY ID HERE]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
   }),
 }
 
