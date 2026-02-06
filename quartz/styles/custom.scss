@@ -1,3 +1,93 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ==========================================
+// STARFIELD BACKGROUND
+// ==========================================
+
+// Dark Mode - Starfield
+body.dark {
+  background-color: #0a0a0a;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 40px 70px, white, transparent),
+    radial-gradient(1px 1px at 50px 50px, white, transparent),
+    radial-gradient(1px 1px at 80px 10px, white, transparent),
+    radial-gradient(2px 2px at 90px 60px, white, transparent),
+    radial-gradient(1px 1px at 110px 90px, white, transparent),
+    radial-gradient(1px 1px at 160px 20px, white, transparent),
+    radial-gradient(2px 2px at 200px 80px, white, transparent);
+  background-size: 200px 100px;
+  background-position: 
+    0 0, 
+    40px 60px, 
+    130px 270px, 
+    70px 100px,
+    0 0, 
+    40px 60px, 
+    130px 270px, 
+    70px 100px;
+  animation: starsMove 120s linear infinite;
+}
+
+@keyframes starsMove {
+  from {
+    background-position: 
+      0 0, 
+      40px 60px, 
+      130px 270px, 
+      70px 100px,
+      0 0, 
+      40px 60px, 
+      130px 270px, 
+      70px 100px;
+  }
+  to {
+    background-position: 
+      0 200px, 
+      40px 260px, 
+      130px 470px, 
+      70px 300px,
+      0 200px, 
+      40px 260px, 
+      130px 470px, 
+      70px 300px;
+  }
+}
+
+// Light Mode - Paper Texture with Specs
+body:not(.dark) {
+  background-color: #faf8f5;
+  background-image: 
+    // Paper texture noise
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.015) 2px,
+      rgba(0, 0, 0, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.015) 2px,
+      rgba(0, 0, 0, 0.015) 4px
+    ),
+    // Subtle cosmic specs
+    radial-gradient(1px 1px at 20px 30px, rgba(139, 115, 85, 0.3), transparent),
+    radial-gradient(1px 1px at 80px 70px, rgba(139, 115, 85, 0.2), transparent),
+    radial-gradient(1px 1px at 150px 40px, rgba(139, 115, 85, 0.25), transparent),
+    radial-gradient(1px 1px at 50px 100px, rgba(139, 115, 85, 0.2), transparent),
+    radial-gradient(1px 1px at 180px 90px, rgba(139, 115, 85, 0.3), transparent),
+    radial-gradient(1px 1px at 120px 20px, rgba(139, 115, 85, 0.2), transparent);
+  background-size: 
+    100% 100%,
+    100% 100%,
+    200px 120px,
+    200px 120px,
+    200px 120px,
+    200px 120px,
+    200px 120px,
+    200px 120px;
+  background-blend-mode: multiply, multiply, normal, normal, normal, normal, normal, normal;
+}
