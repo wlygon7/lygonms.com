@@ -56,38 +56,40 @@ body.dark {
 
 // Light Mode - Paper Texture with Specs
 body:not(.dark) {
-  background-color: #faf8f5;
+  background-color: #f5f2ed;
   background-image: 
-    // Paper texture noise
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.015) 2px,
-      rgba(0, 0, 0, 0.015) 4px
+    // Aged paper effect
+    linear-gradient(
+      180deg,
+      rgba(255, 248, 220, 0) 0%,
+      rgba(255, 248, 220, 0.3) 50%,
+      rgba(255, 248, 220, 0) 100%
     ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.015) 2px,
-      rgba(0, 0, 0, 0.015) 4px
-    ),
-    // Subtle cosmic specs
-    radial-gradient(1px 1px at 20px 30px, rgba(139, 115, 85, 0.3), transparent),
-    radial-gradient(1px 1px at 80px 70px, rgba(139, 115, 85, 0.2), transparent),
-    radial-gradient(1px 1px at 150px 40px, rgba(139, 115, 85, 0.25), transparent),
-    radial-gradient(1px 1px at 50px 100px, rgba(139, 115, 85, 0.2), transparent),
-    radial-gradient(1px 1px at 180px 90px, rgba(139, 115, 85, 0.3), transparent),
-    radial-gradient(1px 1px at 120px 20px, rgba(139, 115, 85, 0.2), transparent);
+    // Fine grain texture
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+    // Cosmic specs (ink spots)
+    radial-gradient(circle at 15% 25%, rgba(101, 67, 33, 0.4) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 45% 65%, rgba(101, 67, 33, 0.3) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 75% 35%, rgba(101, 67, 33, 0.35) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 85% 75%, rgba(101, 67, 33, 0.25) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 30% 85%, rgba(101, 67, 33, 0.3) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 60% 15%, rgba(101, 67, 33, 0.4) 0.5px, transparent 0.5px);
   background-size: 
     100% 100%,
-    100% 100%,
-    200px 120px,
-    200px 120px,
-    200px 120px,
-    200px 120px,
-    200px 120px,
-    200px 120px;
-  background-blend-mode: multiply, multiply, normal, normal, normal, normal, normal, normal;
+    200px 200px,
+    180px 180px,
+    220px 220px,
+    190px 190px,
+    210px 210px,
+    200px 200px,
+    230px 230px;
+  background-position:
+    center,
+    0 0,
+    10px 20px,
+    50px 80px,
+    120px 40px,
+    80px 140px,
+    160px 100px,
+    40px 160px;
 }
