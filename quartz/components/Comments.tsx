@@ -9,7 +9,7 @@ type Options = {
     repo: `wlygon7/lygonms.com`
     repoId: R_kgDORI_0lg
     category: Announcements
-    categoryId: DIC_kwDORI_0ls4C17-c
+    categoryId: DIC_kwDORI_0ls4C17
     themeUrl?: string
     lightTheme?: light_tritanopia
     darkTheme?: Fro
