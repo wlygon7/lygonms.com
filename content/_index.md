@@ -1,5 +1,5 @@
 ---
-title: Digital Garden
+title: Wilson - Polymath Technologist
 publish: true
 ---
 
