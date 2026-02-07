@@ -12,7 +12,7 @@ type Options = {
     categoryId: DIC_kwDORI_0ls4C17
     themeUrl?: string
     lightTheme?: light_tritanopia
-    darkTheme?: Fro
+    darkTheme?: fro
     mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
     strict?: boolean
     reactionsEnabled?: boolean
