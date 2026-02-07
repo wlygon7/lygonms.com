@@ -6,13 +6,13 @@ import script from "./scripts/comments.inline"
 type Options = {
   provider: "giscus"
   options: {
-    repo: `${string}/${string}`
-    repoId: string
-    category: string
-    categoryId: string
+    repo: `wlygon7/lygonms.com`
+    repoId: R_kgDORI_0lg
+    category: Announcements
+    categoryId: DIC_kwDORI_0ls4C17-c
     themeUrl?: string
-    lightTheme?: string
-    darkTheme?: string
+    lightTheme?: "Fro"
+    darkTheme?: "Fro"
     mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
     strict?: boolean
     reactionsEnabled?: boolean
