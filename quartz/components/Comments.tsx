@@ -6,7 +6,7 @@ import script from "./scripts/comments.inline"
 type Options = {
   provider: "giscus"
   options: {
-    repo: `wlygon7/lygonms.com`
+    repo: `wlygon7/notes.lygonms.com`
     repoId: R_kgDORI_0lg
     category: Announcements
     categoryId: DIC_kwDORI_0ls4C17
